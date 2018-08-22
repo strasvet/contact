@@ -1,0 +1,79 @@
+<!--
+<p>
+  contact works!
+</p>
+-->
+
+<!--<div>{{contact}}</div>-->
+<!--<div>{{contactId}}</div>
+<div>{{contactName}}</div>
+<div>{{phone}}</div>
+<hr>-->
+<!--<div>{{toSend}}</div>-->
+
+<!--
+<div *ngIf="show; else succEss"><div class="bg-danger">{{1}}</div></div>
+<ng-template #succEss><div class="bg-success">{{2}}</div></ng-template>
+-->
+<div class="mb-2">
+<div *ngIf="err; else succEss"><div class="bg-danger">{{textErr}}</div></div>
+<ng-template #succEss><div class="bg-success">{{textSucc}}</div></ng-template>
+</div>
+
+<div class="container-fluid col-10">
+<div *ngIf="contact==null">Your contact list is empty</div>
+<div *ngIf="contact!=null">
+
+  <button class="btn btn-primary btn-sm float-right ml-1" (click)="save()" *ngIf="show">save</button>
+  <button class="btn btn-danger btn-sm float-right ml-1" (click)="removeContact(contact.contactId)" *ngIf="!show">remove contact</button>
+  <button class="btn btn-danger btn-sm float-right ml-1" (click)="edit()" *ngIf="!show">edit contact</button>
+  <button class="btn btn-danger btn-sm float-left" (click)="removeAll()" *ngIf="!show">clear all/list contacts</button>
+
+
+<!---->
+
+  <div *ngIf="show; else succEss"><!---->
+    <br>
+  <!--<div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">pass</span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="contact.fullName">
+  </div>
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">pass</span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="contact.address">
+  </div>-->
+    <label for="1">fullName</label>
+    <input id=1 type="text" class="form-control" [(ngModel)]="contact.fullName">
+    <label for="1">address</label>
+    <input id=2 type="text" class="form-control" [(ngModel)]="contact.address">
+    <label for="1">email</label>
+    <input id=3 type="text" class="form-control" [(ngModel)]="contact.email">
+    <label for="1">phoneNumber</label>
+    <input id=4 type="text" class="form-control" [(ngModel)]="contact.phoneNumber">
+    <label for="1">description</label>
+    <input id=5 type="text" class="form-control" [(ngModel)]="contact.description">
+  </div><!---->
+
+
+  <ng-template #succEss><!---->
+  <br>
+  <hr>
+  <!--{{contact.contactId}}<br>-->
+    <div class="row"><div class="col-6">Full name:</div><div class="col-6">{{contact.fullName}}</div></div>
+    <div class="row"><div class="col-6">Address:</div><div class="col-6">{{contact.address}}</div></div>
+    <div class="row"><div class="col-6">E-mail:</div><div class="col-6">{{contact.email}}</div></div>
+    <div class="row"><div class="col-6">Phone:</div><div class="col-6">{{contact.phoneNumber}}</div></div>
+    <div class="row"><div class="col-6">Description:</div><div class="col-6">{{contact.description}}</div></div>
+  <hr>
+  <br>
+  </ng-template><!---->
+
+
+</div>
+
+
+</div>

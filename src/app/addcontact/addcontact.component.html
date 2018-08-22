@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="col-4 offset-4">
+    <br>
+    <hr>
+    <div *ngIf="textSuccess; else textError"><div class="bg-success">{{textSuccess}}</div></div>
+    <!--<ng-template #succEss><div class="bg-danger">{{textError}}</div></ng-template>-->
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend"><span class="input-group-text">address   </span></div>
+      <input type="text" class="form-control" [(ngModel)]=address>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend"><span class="input-group-text">description</span></div>
+      <input type="text" class="form-control" [(ngModel)]="description">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend"><span class="input-group-text">email</span></div>
+      <input type="text" class="form-control" [(ngModel)]="email">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend"><span class="input-group-text">fullName</span></div>
+      <input type="text" class="form-control" [(ngModel)]="fullName">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend"><span class="input-group-text">phoneNumber</span></div>
+      <input type="text" class="form-control" [(ngModel)]="phoneNumber">
+    </div>
+    <button class="btn btn-primary btn-sm float-right" (click)="contactAdd(address)">Add contact</button>
+    <hr>
+    <br>
+  </div>
+</div>

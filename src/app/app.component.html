@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">Home</a></li>
+        <li class="nav-item"><a routerLink="/contacts" routerLinkActive="active" class="nav-link">Contacts</a></li>
+        <li class="nav-item"><a routerLink="/add" routerLinkActive="active" class="nav-link">Add</a></li>
+      </ul>
+      <div>
+        <ul class="nav nav-pills">
+          <li class="nav-item" *ngIf=!isAuth><a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a></li>
+          <li class="nav-item" *ngIf=isAuth><a href="" class="nav-link" (click)="onLogOut()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="mt-1">
+    <div class=" bg-light">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <footer class="page-footer font-small bg-dark">
+<!---->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-white">© 2018 Copyright:
+      <a href="">Contacts.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+</div>

@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="col-4 offset-4">
+    <!--<div class="input-group">
+      <br>
+      <input type="text" class="form-control" placeholder="Type email" [(ngModel)]="email"><br>
+      <input type="text" class="form-control" placeholder="Type password" [(ngModel)]="password"><br>
+      <button class="btn btn-success">Login</button>
+      <hr>
+    </div>
+    <div class="input-group">
+      <input type="text">
+    </div>-->
+    <br>
+    <hr>
+    <div *ngIf="err; else succEss"><div class="bg-danger">{{textErr}}</div></div>
+    <ng-template #succEss><div class="bg-success">{{textSucc}}</div></ng-template>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">mail</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="email">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">pass</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="password">
+    </div>
+    <button class="btn btn-success btn-sm" (click)="onLogin()">Login</button>
+    <button class="btn btn-primary btn-sm float-right" (click)="onReg()">Registration</button>
+    <hr>
+    <br>
+  </div>
+</div>
